@@ -93,6 +93,10 @@ struct ContentView: View {
             }
         }
         .padding(.vertical, 2)
+        .contentShape(Rectangle())
+        .onTapGesture {
+            withAnimation(.snappy) { store.toggle(reminder.id) }
+        }
         .listRowBackground(
             isNear && !reminder.done
                 ? RoundedRectangle(cornerRadius: 10).fill(Color.green.opacity(0.12))
