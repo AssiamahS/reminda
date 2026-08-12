@@ -1,0 +1,45 @@
+name: Reminda
+options:
+  bundleIdPrefix: com.djsly
+  deploymentTarget:
+    iOS: "26.0"
+  xcodeVersion: "26.0"
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    DEVELOPMENT_TEAM: QGMAWHX827
+    MARKETING_VERSION: 1.0.1
+    CURRENT_PROJECT_VERSION: 1
+targets:
+  Reminda:
+    type: application
+    platform: iOS
+    sources:
+      - path: Reminda
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.djsly.remindas
+      CODE_SIGN_STYLE: Automatic
+      TARGETED_DEVICE_FAMILY: 1
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+      SUPPORTS_XR_DESIGNED_FOR: NO
+    info:
+      path: Reminda/Resources/Info.plist
+      properties:
+        CFBundleName: remindas
+        CFBundleDisplayName: remindas
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        ITSAppUsesNonExemptEncryption: false
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+        NSMicrophoneUsageDescription: Speak a reminder and remindas writes it down.
+        NSSpeechRecognitionUsageDescription: Turns your voice into the reminder text.
+        NSLocationWhenInUseUsageDescription: Reminders tied to a place glow when you arrive.
+schemes:
+  Reminda:
+    build:
+      targets:
+        Reminda: all
+    run:
+      config: Debug
